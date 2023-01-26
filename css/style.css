@@ -664,8 +664,8 @@ li.w3pages .dropdown-menu > li > a:hover{
 	margin:2em 0 0;
 }
 .agile_ecommerce_tab_left h5 a {
-    font-size: 1.2em;
-    color: #ff5063;
+    font-size: 1.325em;
+    color: #0766daf0;
     text-decoration: none;
     font-weight: 700;
 	-webkit-transition:.5s all;
@@ -692,7 +692,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 .agile_ecommerce_tab_left p i{
 	font-style:normal;
 }
-.simpleCart_shelfItem button.w3ls-cart {
+.simpleCart_shelfItem button.w3ls-cart, a.w3ls-cart {
     font-size: 14px;
     color: #000;
     margin: 0;
@@ -706,8 +706,9 @@ li.w3pages .dropdown-menu > li > a:hover{
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all;
 	transition:.5s all;
+	cursor: pointer;
 }
-.simpleCart_shelfItem button.w3ls-cart:hover{
+.simpleCart_shelfItem button.w3ls-cart:hover, a.w3ls-cart:hover{
 	background:#3c43a4;
 	color:#fff;
 	border:1px solid #3c43a4;
@@ -1100,7 +1101,7 @@ ul.wmuSliderPagination {
 .w3_hs_bottom_sub ul {
     padding:9.5em 0 0 !important;
 }
-.new-products .simpleCart_shelfItem button.w3ls-cart {
+.new-products .simpleCart_shelfItem button.w3ls-cart, a.w3ls-cart{
     border-color: #717171;
 }
 .new-products .simpleCart_shelfItem p span {
