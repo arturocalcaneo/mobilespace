@@ -348,7 +348,7 @@ p.sbmincart-empty-text {
 /*-- //cart-css --*/ 
 /*-- navigation --*/
 .navbar-default .navbar-nav > li > a {
-    color: #fff;
+    color: #ffffff !important;
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all; 
 	transition:.5s all;
@@ -360,10 +360,10 @@ p.sbmincart-empty-text {
     border: none;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    color: #d8703f;
+    color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a:focus {
-    color: #ff5063 !important;
+    color: #ffffff !important;
 }
 .navbar-default {
     background: none;
@@ -448,7 +448,7 @@ ul.multi-column-dropdown h6 {
 .navigation {
     margin: 2em 0 0;
 	text-align:center;
-	background:#3c43a4;
+	background:#ff5063;
 }
 .navbar-nav {
     float: none;
@@ -1110,12 +1110,12 @@ ul.wmuSliderPagination {
 /*-- //new-products --*/
 /*-- banner-bottom1 --*/
 .agileinfo_banner_bottom1_grid_left{
-	background:url(../images/44.jpg) no-repeat 0px 0px;
-	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	-ms-background-size:cover;
+	background:url("../Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/50_de_descuento_aprovecha_ahora_.webp") no-repeat 0px 0px;
+	background-size:contain;
+	-webkit-background-size:contain;
+	-moz-background-size:contain;
+	-o-background-size:contain;
+	-ms-background-size:contain;
 }
 .agileinfo_banner_bottom1_grid_left,.agileinfo_banner_bottom1_grid_right{
 	padding:0;
