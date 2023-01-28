@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- saved from url=(0096)https://p.w3layouts.com/demos_new/30-01-2017/electronic_store-demo_Free/192355906/web/index.html -->
-<html lang="es-MX">
+<html lang="en">
 	<head>
-		<meta http-equiv="cache-control" content="no-cache">
-		<meta http-equiv="expires" content="Mon, 22 Jul 2002 11:12:01 GMT">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="cache-control" content="no-cache, no-store" />
+		<meta http-equiv='expires' content='0'>
+		<meta http-equiv='pragma' content='no-cache'>
 		<title>Espacio Móvil - Tu tienda de dispositivos celulares con precios accesibles y ofertas especiales | Inicio</title>
 		<!-- for-mobile-apps -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,6 +202,9 @@
 						<li>
 							<a href="#contactanos_ahora">Contáctanos Ahora</a>
 						</li>
+						<li>
+							<a href="#formulario_registro">Registrarse</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -211,7 +215,6 @@
 	<div class="banner">
 		<div class="container">
 			<h3>Espacio Móvil, <span>Ofertas Geniales</span></h3>
-			<h5><span>Que te encantarán</span></h5>
 		</div>
 	</div>
 	<!-- //banner --> 
@@ -227,24 +230,61 @@
 			transform: translateY(80%);
 			color:rgb(40, 40, 40)
 		}
+		.subtitle_second__{
+			display: none;
+			margin-top: 1.25rem !important;
+			font-size:3.75rem;
+		}
+		.image_discount .col-lg-7 img{
+			position: relative !important;
+			max-width: 440px;
+			width:440px;
+			height:auto;
+		}
 		@media (max-width:1270px) {
-			.titulo_aprovechahora{
+			.vertical-center{
 				display: none;
+			}
+			.image_discount{
+				margin: 0 0 0 0 !important;
+			}
+			.image_discount .agile_ecommerce_tab_left{
+				width:100% !important;
+			}
+			.image_discount .col-lg-7{
+				width: 100% !important;
+				text-align: center;
+			}
+			.image_discount .col-lg-7 img{
+				max-width: 100% !important;
+				width:100% !important;
+			}
+			.image_discount .col-lg-5{
+				display:none !important;
+			}
+			.subtitle_second__{
+				display: block !important;
+			}
+		}
+		@media (max-width:512px){
+			.subtitle_second__{
+				font-size:2.7rem;
 			}
 		}
 	</style>
 	<!-- Banner de 50% de descuento -->
 	<div class="new-products" style="background-color:#FFFFFF">
 		<div class="container">
-			<div class="agileinfo_new_products_grids">
-				<div class="col-md-7 agileinfo_new_products_grid">
+			<div class="agileinfo_new_products_grids image_discount">
+				<div class="col-lg-7 agileinfo_new_products_grid">
 					<div class="agile_ecommerce_tab_left">
-						<img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/descuento_50.png" width="440" alt=" ">
+						<img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/descuento_50.png" alt=" ">
+						<h2 class="subtitle_second__">¡Aprovéchalo Ahora!</h2>
 					</div>
 				</div>
-				<div class="col-md-5 agileinfo_new_products_grid">
+				<div class="col-lg-5 agileinfo_new_products_grid">
 					<div class="agile_ecommerce_tab_left">
-						<h2 style="font-size:4.5rem" class="vertical-center">¡Aprovéchalo Ahora!</h2>
+						<center> <h2 style="font-size:4.5rem" class="vertical-center">¡Aprovéchalo Ahora!</h2> </center>
 					</div>
 				</div>
 			</div>
@@ -493,7 +533,7 @@
 						<input placeholder="Contraseña" name="Password" type="password" required=>
 						<input placeholder="Confirmar Contraseña" name="Password" type="password" required>
 						<div class="sign-up">
-							<input type="submit" value="Crear Cuenta y Enviar Promociones" style="width:auto;padding-left:0.75rem;padding-right:0.75rem;border-radius:6px">
+							<input type="submit" value="Crear Cuenta y Enviar Promociones" style="width:100%;padding-left:0.75rem;padding-right:0.75rem;border-radius:6px">
 						</div>
 					</form>
 				</div>
