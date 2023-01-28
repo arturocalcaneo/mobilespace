@@ -694,14 +694,14 @@ li.w3pages .dropdown-menu > li > a:hover{
 }
 .simpleCart_shelfItem button.w3ls-cart, a.w3ls-cart {
     font-size: 14px;
-    color: #000;
+    color: #fff;
     margin: 0;
     text-decoration: none;
     text-transform: capitalize;
     padding: .5em 1.5em;
-    border: 1px solid #c1c1c1;
+    
     border-radius: 5px;
-    background: transparent;
+    background: rgb(8, 161, 8);
     outline: none;
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all;
@@ -709,9 +709,8 @@ li.w3pages .dropdown-menu > li > a:hover{
 	cursor: pointer;
 }
 .simpleCart_shelfItem button.w3ls-cart:hover, a.w3ls-cart:hover{
-	background:#3c43a4;
+	background: rgb(4, 144, 4);
 	color:#fff;
-	border:1px solid #3c43a4;
 }
 /*-- image-hover --*/
 .w3_hs_bottom{
