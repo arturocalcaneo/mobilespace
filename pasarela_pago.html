@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width">
+        <meta http-equiv="cache-control" content="no-cache, no-store" />
+		<meta http-equiv='expires' content='0'>
+		<meta http-equiv='pragma' content='no-cache'>
+        <title>Crear Cuenta y Proceder con la Compra</title>
+        <!-- Custom Theme files -->
+		<link href="css/bootstrap46.min.css" rel="stylesheet" type="text/css" media="all">
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+		<link href="css/fasthover.css" rel="stylesheet" type="text/css" media="all">
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all">
+		<!-- //Custom Theme files -->
+		<!-- font-awesome icons -->
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<!-- //font-awesome icons -->
+		<!-- js -->
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.countdown.css"> <!-- countdown --> 
+		<!-- //js -->  
+		<!-- web fonts --> 
+		<link href="css/fonts(1).css" rel="stylesheet" type="text/css">
+		<link href="css/fonts(2).css" rel="stylesheet" type="text/css">
+		<!-- //web fonts -->  
+		<!-- start-smooth-scrolling -->
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+		<script src="js/convertirCOP_USD.js"></script>
+		<!-- //end-smooth-scrolling -->
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            ._label{
+                margin-top: 0.25rem;
+                margin-bottom: 0.25rem;
+                font-weight: 600;
+            }
+            .subrow__2 .col-6:first-of-type{
+                padding-left: 0;
+                padding-right: 8px;
+            }
+            .subrow__2 .col-6:last-of-type{
+                padding-right: 0;
+                padding-left: 8px;
+            }
+            .subrow__3 .col-md-6:first-of-type{
+                padding-left: 0;
+                padding-right: 8px;
+            }
+            .subrow__3 .col-md-6:last-of-type{
+                padding-right: 0;
+                padding-left: 8px;
+            }
+            .subrow__3 .col-lg-6:first-of-type {
+                padding-left: 0;
+                padding-right: 8px;
+            }
+            .subrow__3 .col-lg-6:last-of-type {
+                padding-left: 8px;
+                padding-right: 0;
+            }
+
+            @media (min-width: 992px){
+                .subrow__1 .col-lg-6:first-of-type{
+                    padding-left: 0;
+                    padding-right: 8px;
+                }
+                .subrow__1 .col-lg-6:last-of-type{
+                    padding-right: 0;
+                    padding-left: 8px;
+                }
+            }
+            @media (max-width: 992px){
+                .subrow__1 .col-lg-6{
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                .subrow__3 .col-lg-6:first-of-type {
+                    padding-right: 0;
+                }
+                .subrow__3 .col-lg-6:last-of-type {
+                    padding-left: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container pt-5 w-100 h-100" id="pasarela_pago">
+            <h1 class="mb-3"><img src="src/cart.png" width="40"> Completar la Compra</h1>
+                <div class="row">
+                    <div class="col-md-6 border rounded mr-3 col_1 p-4">
+                        <form method="POST" action="">
+                            <div class="mb-3">
+                                <label class="_label">Nombre Completo</label>
+                                <input class="form-control" name="nombreCompleto" type="text">
+                                <small class="info"></small>
+                            </div>
+                            <div class="row subrow__1">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="_label">Apellidos</label>
+                                        <input class="form-control" name="apellidos" type="text">
+                                        <small class="info"></small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="_label">Fecha de Nacimiento</label>
+                                        <input class="form-control" name="fechaNacimiento" type="date">
+                                        <small class="info"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="_label">Correo Electrónico</label>
+                                <input class="form-control" name="correoElectronico" type="email">
+                                <small class="info"></small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="_label">Contraseña</label>
+                                <input class="form-control" name="contrasena" type="password">
+                                <small class="info"></small>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <label class="_label">Número de Tarjeta</label>
+                                <input class="form-control" name="numTarjeta" type="text">
+                                <small class="info"></small>
+                            </div>
+                            <div class="row subrow__3">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="_label">Fecha de Expiración</label>
+                                        <div class="row subrow__2">
+                                            <div class="col-6">
+                                                <input class="form-control" name="mesTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00">
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="form-control" name="anioTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="_label">CVC</label>
+                                        <input class="form-control" type="text" name="cvc" maxlength="3" pattern="[0-9]{3}" placeholder="000">
+                                        <small class="info"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-success btn-lg mb-2 mt-2" id="proceder_compra" type="submit">Proceder con la Compra</button>
+                                <span class="btn btn-secondary btn-lg mb-2 mt-2" onclick="$('#proceder_compra').click()">Volver</span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 border rounded p-4">
+                        <div class="preview_producto">
+                            <img id="imagenProducto" class="img-fluid" width="256" alt=" ">
+                            <div class="">
+                                <h3 id="tituloProducto" class="mt-3">Nombre de Producto</h3>
+                                <h5 id="precioNormal" style="text-decoration:line-through" class="mt-2">$ 0.00</h5>
+                                <h5 id="precioDescuento" class="mt-2" style="font-size:1.75rem">$ 0.00</h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="banner_tarjeta">
+                            <div class="row" style="text-align:center">
+                                <div class="col-sm-4">
+                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/bancolombia.png" width="92">
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/bbva.webp" width="92">
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/banco_bogota.png" width="92">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#imagenProducto').attr('src',decodeURIComponent(getSearchParams('image_source')));
+                $('#tituloProducto').text(decodeURIComponent(getSearchParams('title_product')).split('+').join(' '));
+                $('#precioNormal').text('$ '+decodeURIComponent(getSearchParams('normalValue_product')));
+                $('#precioDescuento').text('$ '+decodeURIComponent(getSearchParams('valueDiscount_product')));
+            });
+
+            function getSearchParams(param, defaultValue = undefined) {
+                location.search.substr(1)
+                    .split("&")
+                    .some(function(item) { // returns first occurence and stops
+                        return item.split("=")[0] == param && (defaultValue = item.split("=")[1], true)
+                    })
+                return defaultValue
+            }
+
+            function formatearParaTarjeta(input){
+                var value= $(input).val();
+                // ....
+            }
+
+            function reorganizarColumnas(){
+                if($(window).width() < 769){
+                    $('#pasarela_pago .row .col_1').removeClass('mr-3');
+                    $('#pasarela_pago .row .col_1').removeClass('col-md-6');
+                    $('#pasarela_pago .row .col_1').addClass('mb-3');
+                    $('#pasarela_pago .row .col_1').addClass('col-md-7');
+                }else{
+                    $('#pasarela_pago .row .col_1').removeClass('col-md-7');
+                    $('#pasarela_pago .row .col_1').addClass('mr-3');
+                    $('#pasarela_pago .row .col_1').addClass('col-md-6');
+                    $('#pasarela_pago .row .col_1').removeClass('mb-3');
+                }
+            }
+
+            $(reorganizarColumnas());
+
+            $(window).resize(function(){
+                $(reorganizarColumnas());
+            });
+        </script>
+    </body>
+</html>

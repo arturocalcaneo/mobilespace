@@ -656,6 +656,7 @@ li.w3pages .dropdown-menu > li > a:hover{
 .agile_ecommerce_tab_left {
     padding-left: 0;
 	text-align: center;
+	z-index: 999999 !important;
 }
 .agile_ecommerce_tabs {
     padding: 2em 0 0;
@@ -914,6 +915,10 @@ li.w3pages .dropdown-menu > li > a:hover{
     height: 1px;
     width: 10%;
 }
+.noactive_redline_title:before{
+	background: none !important;
+	height: 0 !important;
+}
 .special-deals h2:after,.new-products h3:after,.top-brands h3:after,.w3l_related_products h3:after,.team h3:after,.mail h3:after,h3.agileits-title:after{
 	content: '';
     position: absolute;
@@ -1146,15 +1151,15 @@ ul.wmuSliderPagination {
     font-size: 1em;
     letter-spacing: 2px;
     color: #ff5063;
-    background: url(../images/img-sp.png) no-repeat 112px -4px;
+    /*background: url(../images/img-sp.png) no-repeat 112px -4px;*/
     padding: 0 45px 0 0;
 }
 .agileinfo_banner_bottom1_grid_left a:hover,.team-bottom a:hover{
 	color:#212121;
-	background:url(../images/img-sp.png) no-repeat 112px -38px;
+	/*background:url(../images/img-sp.png) no-repeat 112px -38px;*/
 }
 .agileinfo_banner_bottom1_grid_right{
-	background:url(../images/45.jpg) no-repeat 0px 0px;
+	/*background:url(../images/45.jpg) no-repeat 0px 0px;*/
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -1272,7 +1277,7 @@ ul.wmuSliderPagination {
 	outline: none;
     padding: 9px 0;
     width: 15%;
-    background: url(../images/img-sp.png) no-repeat 26px -65px #ff5063;
+    /*background: url(../images/img-sp.png) no-repeat 26px -65px #ff5063;*/
     border: none;
 	-webkit-transition:.5s all;
 	-moz-transition:.5s all;
@@ -1334,7 +1339,7 @@ ul.wmuSliderPagination {
 }
 .w3_footer_grid ul.info li a {
     padding-left:2.2em;
-    background: url(../images/img-sp.png) no-repeat -6px -98px;
+    /*background: url(../images/img-sp.png) no-repeat -6px -98px;*/
 }
 .w3_footer_grid h4{
 	margin:2em 0 1em;
@@ -1347,7 +1352,7 @@ ul.wmuSliderPagination {
 	margin: 0 !important;
 }
 .agileits_social_button ul li a{
-	background: url(../images/img-sp.png) no-repeat 1px -130px #414141;
+	/*background: url(../images/img-sp.png) no-repeat 1px -130px #414141;*/
     display: block;
     width: 35px;
     height: 35px;
@@ -1575,7 +1580,7 @@ h3.other-nw {
 }
 .entypo-facebook:before {
     content: " ";
-    background: url(../images/img-sp.png) no-repeat 7px -125px;
+    /*background: url(../images/img-sp.png) no-repeat 7px -125px;*/
     display: block;
     width: 3em;
     height: 3em;
@@ -1587,7 +1592,7 @@ h3.other-nw {
 }
 .entypo-twitter:before {
     content: " ";
-    background:url(../images/img-sp.png) no-repeat -35px -125px;
+    /*background:url(../images/img-sp.png) no-repeat -35px -125px;*/
     display: block;
     width: 3em;
     height: 3em;
@@ -1599,7 +1604,7 @@ h3.other-nw {
 }
 .entypo-dribbble:before {
     content: " ";
-    background:url(../images/img-sp.png) no-repeat -74px -125px;
+    /*background:url(../images/img-sp.png) no-repeat -74px -125px;*/
     display: block;
     width: 3em;
     height: 3em;
@@ -1611,7 +1616,7 @@ h3.other-nw {
 }
 .entypo-behance:before {
     content: " ";
-    background:url(../images/img-sp.png) no-repeat -117px -125px;
+    /*background:url(../images/img-sp.png) no-repeat -117px -125px;*/
     display: block;
     width: 3em;
     height: 3em;
@@ -1729,7 +1734,7 @@ h3.other-nw {
 	list-style-type: none;
     margin-bottom: 1em;
     padding-left: 1.5em;
-    background: url(../images/img-sp.png) no-repeat -13px -172px;
+    /*background: url(../images/img-sp.png) no-repeat -13px -172px;*/
 }
 .panel-body ul li a{
     font-size: 14px;
@@ -1962,12 +1967,12 @@ select.select_item {
 .nbs-flexisel-nav-left {
 	left:-5%;
 	top:38% !important;
-	background:url(../images/left-arrow.png) no-repeat 0px 0px;
+	/*background:url(../images/left-arrow.png) no-repeat 0px 0px;*/
 }
 .nbs-flexisel-nav-right {
 	right:-5%;
 	top:38% !important;
-	background:url(../images/right-arrow.png) no-repeat 0px 0px;
+	/*background:url(../images/right-arrow.png) no-repeat 0px 0px;*/
 }
 /*-- //flexisel --*/
 .w3l_related_products_grid{
@@ -3793,22 +3798,22 @@ td.invert-image a img {
 		width: 2em;
 	}
 	.entypo-facebook:before {
-		background: url(../images/img-sp.png) no-repeat -1px -131px;
+		/*background: url(../images/img-sp.png) no-repeat -1px -131px;*/
 		width: 2em;
 		height: 2em;
 	}
 	.entypo-dribbble:before {
-		background: url(../images/img-sp.png) no-repeat -82px -131px;
+		/*background: url(../images/img-sp.png) no-repeat -82px -131px;*/
 		width: 2em;
 		height: 2em;
 	}
 	.entypo-twitter:before {
-		background: url(../images/img-sp.png) no-repeat -42px -131px;
+		/*background: url(../images/img-sp.png) no-repeat -42px -131px;*/
 		width: 2em;
 		height: 2em;
 	}
 	.entypo-behance:before {
-		background: url(../images/img-sp.png) no-repeat -124px -131px;
+		/*background: url(../images/img-sp.png) no-repeat -124px -131px;*/
 		width: 2em;
 		height: 2em;
 	}
@@ -4866,10 +4871,10 @@ td.invert-image a img {
 	}
 	.agileinfo_banner_bottom1_grid_left a, .team-bottom a {
 		font-size: 14px;
-		background: url(../images/img-sp.png) no-repeat 93px -5px;
+		/*background: url(../images/img-sp.png) no-repeat 93px -5px;*/
 	}
 	.agileinfo_banner_bottom1_grid_left a:hover, .team-bottom a:hover {
-		background:url(../images/img-sp.png) no-repeat 93px -39px;
+		/*background:url(../images/img-sp.png) no-repeat 93px -39px;*/
 	}
 	.top-brands img {
 		width: 60%;
