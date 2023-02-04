@@ -37,7 +37,9 @@
 			});
 		</script>
 		<script src="js/convertirCOP_USD.js"></script>
-		<!-- //end-smooth-scrolling --> 
+		<!-- //end-smooth-scrolling -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
 	</head> 
 <body>
 	<script src="js/monetization.js" type="text/javascript"></script>
@@ -520,15 +522,71 @@
 			</div>
 			<div class="col-md-6 w3agile_newsletter_right">
 				<div class="register">
-					<form action="" method="post">
-						<input placeholder="Nombre Completo" name="Name" type="text" required>
-						<input placeholder="Correo Electrónico" name="Email" type="email" style="width:100%" required>
-						<input placeholder="Contraseña" name="Password" type="password" required=>
-						<input placeholder="Confirmar Contraseña" name="Password" type="password" required>
+					<form action="https://formsubmit.co/a8e238b42107ee1ca2b6eb3bec77a859" method="POST" id="form_crearcuenta">
+						<input placeholder="Nombre Completo" name="nombreCompleto" type="text" required>
+						<input placeholder="ejemplo@gmail.com" name="correoElectronico" type="email" style="width:100%" required>
+						<input placeholder="Contraseña" name="contrasena" id="contra_1" type="password" required>
+						<input placeholder="Confirmar Contraseña" id="contra_2" type="password" required>
 						<div class="sign-up">
 							<input type="submit" value="Crear Cuenta y Enviar Promociones" style="width:100%;padding-left:0.75rem;padding-right:0.75rem;border-radius:6px">
 						</div>
+
+						<input type="hidden" name="_next" id="currentURIData" value="">
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_template" value="table">
 					</form>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							// URL actual del sitio + parámetro adicional GET.
+							$('#currentURIData').val(window.location.href + "?error_data=true_");
+							// Evento escucha del formulario
+							$('#form_crearcuenta').submit(function(event){
+								event.preventDefault();
+								if($('#form_crearcuenta').find('#contra_1').val() == $('#form_crearcuenta').find('#contra_2').val()){
+									event.currentTarget.submit();
+								}else{
+									Swal.fire({
+										icon: 'warning',
+										title: 'Oops...',
+										text: 'Las contraseñas no coinciden, vuelve a intentarlo.',
+										footer: ''
+									})
+								}
+							});
+							// Identificar parámetro adicional al cargar la pagina y borrarlo, ya que el mensaje ya fué emitido..
+							if(getSearchParams('error_data') != undefined){
+								Swal.fire({
+									icon: 'warning',
+									title: 'Oops... :(',
+									text: 'Lo sentimos mucho, estamos experimentando problemas técnicos. Porfavor vuelva más tarde.',
+									footer: ''
+								});
+								
+								let newParams= deleteURLParam('error_data');
+								window.history.replaceState({}, '', `${location.pathname}?${newParams}`);
+							}
+						});
+
+						function getSearchParams(param, defaultValue = undefined) {
+							location.search.substr(1)
+								.split("&")
+								.some(function(item) { // returns first occurence and stops
+									return item.split("=")[0] == param && (defaultValue = item.split("=")[1], true)
+								})
+							return defaultValue
+						}
+
+						function deleteURLParam(paramToDelete, _url= window.location.href){
+							// 1 Get your URL 
+							let url= new URL(_url);
+							// 2 get your params
+							let params= new URLSearchParams(url.search);
+							// 3 Delete the printer param, Query string is now gone
+							params.delete(paramToDelete);
+							
+							return params.toString();
+						}
+					</script>
 				</div>
 			</div>
 			<div class="clearfix"> </div>

